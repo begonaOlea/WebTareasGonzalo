@@ -3,6 +3,19 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>Tus Tareas Web</h1>
+  <h1>Tus Tareas Web Empresa</h1>
   <p>Acceso a tus tareas online</p> 
+</div>
+
+<div>
+    <div>
+        <c:choose>
+            <c:when test="${not empty sessionScope.usuario.email}">
+                <p>Usuario: ${sessionScope.usuario.nombre} ${sessionScope.usuario.apellidos}</p>
+            </c:when>
+            <c:otherwise>
+                <p></p>
+            </c:otherwise>    
+        </c:choose>
+    </div>
 </div>
